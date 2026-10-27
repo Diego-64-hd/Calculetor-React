@@ -20,10 +20,12 @@ Calculadora web construida con React y CSS, con una interfaz oscura y adaptable 
   
 # Estructura de los archivos
 calculadora-react/
-├── calculadora.jsx   # Componente principal y lógica de cálculo
-├── calculadora.css   # Estilos y adaptación a pantallas pequeñas
-├── input.jsx         # Pantalla editable y vista del resultado
-└── README.md
+ - calculadora.jsx   # Componente principal y lógica de cálculo
+ -  calculadora.css   # Estilos y adaptación a pantallas pequeñas
+ -  input.jsx         # Pantalla editable y vista del resultado
+ - README.md
+ - package.json
+ - index.html
 
 # Cómo funciona
 La aplicación está dividida en dos componentes principales:
@@ -31,8 +33,12 @@ La aplicación está dividida en dos componentes principales:
 - Input muestra la expresión y el resultado. Al pulsar la pantalla, permite editar la expresión directamente y utiliza useEffect junto con useRef para enfocar el campo de texto.
 - La función evaluarExpresion() normaliza los símbolos visuales de multiplicación, división y resta. Después analiza los tokens y calcula la expresión mediante funciones que respetan la precedencia de los operadores. No utiliza eval() ni Function() para ejecutar la expresión.
 
-# Instalación y ejecució
- Para este proceso debe usted ingresar en su terminal 'git clone 
+# Instalación y ejecución:
+ Para este proceso debe usted ingresar en su terminal:
+ - 'git clone https://github.com/Diego-64-hd/Calculetor-React.git'
+ - cd calculadora-react
+ - npm install
+ - npm run dev
 
 # Si ya tienes un proyecto creado con Vite:
 1. Copia calculadora.jsx, calculadora.css e input.jsx dentro de src/.
@@ -42,6 +48,7 @@ La aplicación está dividida en dos componentes principales:
 5. En la terminal, ejecuta:
 npm install
 npm run dev
+
 # Estos comandos presuponen que el proyecto anfitrión ya tiene un package.json con los scripts habituales de Vite. Si no existe, primero debes crear y configurar el proyecto React. 
 Uso
 - Pulsa los botones para construir una expresión.
@@ -52,8 +59,8 @@ Uso
   
 # Limitaciones conocidas
 - El proyecto no incluye pruebas automatizadas.
-- No incluye configuración de despliegue ni archivos de proyecto completos en el ZIP compartido.
 - El botón ANS reutiliza el último resultado calculado; inicialmente su valor es 0.
 - La calculadora muestra Error de sintaxis cuando la expresión no se puede analizar o el resultado no es finito.
+  
  # Autor
 Diego Hernández
