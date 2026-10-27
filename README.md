@@ -29,9 +29,10 @@ calculadora-react/
 La aplicación está dividida en dos componentes principales:
 - Calculadora administra la expresión escrita, el último resultado y los mensajes de error. También define los botones y procesa sus acciones.
 - Input muestra la expresión y el resultado. Al pulsar la pantalla, permite editar la expresión directamente y utiliza useEffect junto con useRef para enfocar el campo de texto.
-La función evaluarExpresion() normaliza los símbolos visuales de multiplicación, división y resta. Después analiza los tokens y calcula la expresión mediante funciones que respetan la precedencia de los operadores. No utiliza eval() ni Function() para ejecutar la expresión.
-Instalación y ejecución
-El ZIP compartido contiene los componentes y la hoja de estilos, pero no incluye package.json, el archivo HTML de entrada ni el punto de montaje de React. Por eso, no es posible ejecutar este ZIP por sí solo con npm run dev hasta integrarlo en un proyecto React.
+- La función evaluarExpresion() normaliza los símbolos visuales de multiplicación, división y resta. Después analiza los tokens y calcula la expresión mediante funciones que respetan la precedencia de los operadores. No utiliza eval() ni Function() para ejecutar la expresión.
+
+# Instalación y ejecució
+ Para este proceso debe usted ingresar en su terminal 'git clone 
 
 # Si ya tienes un proyecto creado con Vite:
 1. Copia calculadora.jsx, calculadora.css e input.jsx dentro de src/.
