@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Input from "./input.jsx";
 import "./calculadora.css";
 
@@ -26,6 +26,26 @@ const BOTONES = [
   { texto: "%", valor: "%", clase: "opt" },
   { texto: "=", accion: "calcular", clase: "igual" },
 ];
+
+function CursorGlow() {
+  const glowRef = useRef(null);
+
+  useEffect(() => {
+    function actualizarPosicion(event) {
+      if (event.pointerType === "touch" || !glowRef.current) {
+        return;
+      }
+
+      glowRef.current.style.setProperty("--cursor-x", `${event.clientX}px`);
+      glowRef.current.style.setProperty("--cursor-y", `${event.clientY}px`);
+    }
+
+    window.addEventListener("pointermove", actualizarPosicion);
+    return () => window.removeEventListener("pointermove", actualizarPosicion);
+  }, []);
+
+  return <div ref={glowRef} className="cursor-glow" aria-hidden="true" />;
+}
 
 function evaluarExpresion(expresion) {
   const expresionNormalizada = expresion.replace(/[×÷−]/g, (simbolo) => {
@@ -168,6 +188,8 @@ function Calculadora() {
 
   return (
 
+    <>
+      <CursorGlow />
     <main className="calculadora">
       <div className="pantalla">
         <Input
@@ -194,6 +216,7 @@ function Calculadora() {
       </div>
           <h2 style={{ borderTop: "1px solid #fff", padding: "10px", color: "#ccc", fontSize: "14px" }}>This App Web created by Diego Hernández</h2>
     </main>
+    </>
     );
 }
 
