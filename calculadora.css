@@ -1,0 +1,163 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f172a;
+  height: 100vh;
+}
+
+* {
+  color: white;
+  box-sizing: border-box;
+}
+
+.calculadora {
+  width: min(460px, calc(100vw - 32px));
+  margin-inline: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  background-color: #1e293b;
+}
+
+.pantalla {
+  width: 100%;
+  min-height: 120px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #d6a400;
+  border-radius: 12px;
+  background-color: #0b1220;
+}
+
+.pantalla-texto {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: text;
+  font: inherit;
+  font-size: 28px;
+  text-align: left;
+}
+
+.pantalla-texto:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  box-shadow: 0px 2px 8px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.pantalla-texto span:first-child {
+  overflow-wrap: anywhere;
+}
+
+.resultado {
+  min-height: 1.4em;
+  color: #cbd5e1;
+  font-size: 18px;
+  text-align: right;
+}
+
+.botones {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.num,
+.opt,
+.borrar,
+.igual {
+  min-width: 0;
+  min-height: 64px;
+  padding: 8px;
+  border: 1px solid rgba(250, 250, 250, 0.35);
+  border-radius: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.num {
+  background-color: #334155;
+}
+
+.num:hover {
+  background-color: #475569;
+}
+
+.opt {
+  background-color: #3b82f6;
+}
+
+.opt:hover {
+  background-color: #2563eb;
+}
+
+.borrar {
+  background-color: #ef4444;
+}
+
+.borrar:hover {
+  background-color: #dc2626;
+}
+
+.igual {
+  background-color: #22c55e;
+}
+
+.igual:hover {
+  background-color: #16a34a;
+}
+
+.num:hover,
+.opt:hover,
+.borrar:hover,
+.igual:hover {
+  transform: translateY(-2px);
+  border: none;
+  box-shadow: 0px 2px 8px rgba(255, 255, 255, 1);
+}
+
+.pantalla input {
+  width: calc(100% - 16px);
+  margin: 8px;
+  padding: 8px;
+  border: 0;
+  background-color: #0b1220;
+  font: inherit;
+  font-size: 28px;
+}
+
+@media (max-width: 420px) {
+  .calculadora {
+    padding: 16px;
+  }
+
+  .num,
+  .opt,
+  .borrar,
+  .igual {
+    min-height: 56px;
+    font-size: 20px;
+  }
+}
